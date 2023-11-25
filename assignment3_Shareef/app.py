@@ -4,13 +4,13 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route("/")
+@app.route("/")
 def index():
     return render_template("index.html")
 
-@application.route("/bookDetails", methods=['POST'])
+@app.route("/bookDetails", methods=['POST'])
 def bookDetails():
     base_url = "https://openlibrary.org/subjects/"
     subject = request.form['subject']
